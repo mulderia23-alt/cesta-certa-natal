@@ -10,13 +10,15 @@ Página natalina independente adaptada da oferta https://fabricada-cestacerta.ve
 
 Importar **este repositório como um novo projeto**, usando a raiz. A configuração publica `dist`. Não alterar os projetos Vercel existentes. O domínio de produção será o atribuído ao novo projeto; a metatag de compartilhamento usa o caminho `/assets/hero-natal.webp` relativo à raiz.
 
-## Oferta preservada
+## Oferta aprovada
 
-- Essencial: R$25,00 — https://pay.wiapy.com/wHwV3bFk8
-- Completo + Bônus: R$32,00 — https://pay.wiapy.com/B43aW3UJt6
+- Essencial: R$27,00 — https://pay.wiapy.com/jo956lg2C0So
+- Completo + Bônus: R$41,90 — https://pay.wiapy.com/6ac68690c7ae865f6ee08ea8
+- Oferta do Completo ao escolher o básico: R$34,90 — https://pay.wiapy.com/_wAFKQWmeV8
+- O pop-up revela um desconto fixo de R$7,00 com animação de roleta. Não há sorteio ou resultado aleatório. Fechar volta à página; recusar segue para o checkout do básico.
 - Garantia de 7 dias, acesso vitalício e entrega digital pelo WhatsApp/e-mail após a confirmação.
 - Kit Foto de Cesta, Calendário de Vendas 2026 e 30 Textos Prontos inclusos no Completo.
-- Pixel UTMify e links de pagamento mantidos a partir da oferta original. Parâmetros de campanha são preservados nos checkouts.
+- Pixel UTMify preservado e links de pagamento atualizados conforme aprovação. Parâmetros de campanha são preservados nos checkouts.
 
 O simulador usa estimativas editáveis e distingue faturamento bruto de saldo após custos. A página não cria resultados de clientes nem novas promessas de entrega. Os depoimentos e suas fotos foram preservados da referência fornecida pelo proprietário.
 
@@ -27,3 +29,9 @@ As telas do carrossel são apresentações visuais dos recursos com o tema natal
 10 imagens originais criadas individualmente com o gerador integrado: hero com app, seis cestas e três bônus. Prompts completos em `design/prompts.json`. Arquivos usados pela página em `dist/assets/`. Originais PNG preservados localmente em `design/originais/`, ignorados no Git para manter o repositório da página leve. WebP otimizado sem alterar a composição.
 
 Os sites anteriores e seus repositórios permanecem separados.
+
+## Avisos de compras reais
+
+O componente está pronto e permanece oculto até receber compras confirmadas. Não há nomes ou vendas inventados. Configure `data-feed` no elemento `#purchase-toast` com um endpoint público HTTPS do seu backend (CORS habilitado), sem tokens ou dados privados na URL. Nunca exponha a API secreta do checkout no navegador.
+
+Formato da resposta: uma lista JSON de registros com `id` (identificador público anonimizado), `firstName` (somente o primeiro nome), `lastInitial` (inicial opcional), `plan` (`completo` ou `essencial`), `status` (`paid`) e `paidAt` (data ISO com fuso). O backend deve incluir somente pagamentos confirmados autorizados para exibição, sem telefone, e-mail ou número do pedido. A página mostra apenas compras dos últimos 10 minutos, uma vez por sessão, com limite de um aviso a cada 30 segundos. Registros antigos, futuros ou inválidos são descartados. Sem feed configurado, nenhum aviso é mostrado nem requisição é feita.

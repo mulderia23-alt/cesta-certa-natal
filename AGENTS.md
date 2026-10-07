@@ -4,7 +4,7 @@ Repositório exclusivo: https://github.com/mulderia23-alt/cesta-certa-natal. Bra
 
 O usuário autorizou criar a campanha natalina, testar e enviá-la a um novo repositório GitHub. Alterações desta página devem ficar somente nesta pasta e neste repositório. Nunca modificar os sites Ateliê Clarice Maciel, Mesa Posta Natal Teste B ou a oferta original fabricada-cestacerta como parte deste projeto.
 
-Editar os arquivos em dist. Preservar os preços aprovados da oferta original: Essencial R$25,00 e Completo R$32,00. Destinos originais: https://pay.wiapy.com/wHwV3bFk8 e https://pay.wiapy.com/B43aW3UJt6. Garantia: 7 dias. Não inventar depoimentos, vendas ou resultados. Diferenciar faturamento de saldo após custos na simulação. A página apresenta a campanha e prévias visuais do aplicativo; não contém o aplicativo pago nem altera seu backend.
+Editar os arquivos em dist. Preços aprovados em 07/10/2026: Essencial R$27,00 (https://pay.wiapy.com/jo956lg2C0So), Completo R$41,90 (https://pay.wiapy.com/6ac68690c7ae865f6ee08ea8) e oferta do Completo no pop-up R$34,90 (https://pay.wiapy.com/_wAFKQWmeV8). O básico abre a oferta com visual de roleta; o desconto é fixo, sem sorteio. Avisos de compra exigem um feed de pagamentos confirmados; não preencher com vendas fictícias. Garantia: 7 dias. Não inventar depoimentos, vendas ou resultados. Diferenciar faturamento de saldo após custos na simulação. A página apresenta a campanha e prévias visuais do aplicativo; não contém o aplicativo pago nem altera seu backend.
 
 Testar com npm run check (ou node scripts/check.mjs), revisar o diff, commitar e enviar ao GitHub, conferindo o SHA remoto. Não usar force push. Publicação na Vercel fica com o proprietário.
 

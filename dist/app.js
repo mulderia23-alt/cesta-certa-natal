@@ -53,7 +53,8 @@ gallery.addEventListener('click',event=>{
 });
 const closeModal=()=>modal.close();
 document.getElementById('modal-close').addEventListener('click',closeModal);
-modal.addEventListener('close',()=>document.body.classList.remove('modal-open'));
+const syncModalLock=()=>document.body.classList.toggle('modal-open',Boolean(document.querySelector('dialog[open]')));
+modal.addEventListener('close',syncModalLock);
 modal.addEventListener('click',event=>{if(event.target===modal){const rect=modal.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)closeModal();}});
 document.getElementById('modal-cta').addEventListener('click',closeModal);
 
@@ -65,3 +66,64 @@ document.querySelectorAll('.checkout').forEach(link=>{
   }
   link.href=url.href;
 });
+
+const offer=document.getElementById('offer-modal');
+const wheel=document.getElementById('offer-wheel');
+document.querySelector('[data-plan="essencial"]').addEventListener('click',event=>{
+  // Keep the approved basic checkout as a working fallback without JavaScript.
+  event.preventDefault();
+  document.getElementById('purchase-toast').hidden=true;
+  wheel.classList.remove('is-spinning');
+  offer.showModal();syncModalLock();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    if(offer.open&&!reduceMotion.matches)wheel.classList.add('is-spinning');
+  }));
+});
+document.getElementById('offer-close').addEventListener('click',()=>offer.close());
+offer.addEventListener('close',()=>{wheel.classList.remove('is-spinning');syncModalLock();});
+offer.addEventListener('click',event=>{
+  if(event.target!==offer)return;
+  const rect=offer.getBoundingClientRect();
+  if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)offer.close();
+});
+
+// A trusted public feed of confirmed payments is required. No demo sales.
+const purchaseToast=document.getElementById('purchase-toast');
+const purchaseMessage=document.getElementById('purchase-message');
+const seenPurchases=new Set();
+try{JSON.parse(sessionStorage.getItem('cesta-confirmed-purchases')||'[]').forEach(id=>seenPurchases.add(id));}catch{}
+let toastTimer,feedBusy=false,lastPurchaseShown=0;
+const hidePurchase=()=>{purchaseToast.hidden=true;clearTimeout(toastTimer);};
+document.getElementById('purchase-dismiss').addEventListener('click',hidePurchase);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)hidePurchase();});
+function recentConfirmedPurchase(record){
+  if(!record||typeof record!=='object'||record.status!=='paid'||!['essencial','completo'].includes(record.plan))return false;
+  if(typeof record.id!=='string'||record.id.length>100||!record.id||seenPurchases.has(record.id))return false;
+  if(typeof record.firstName!=='string'||!/^\p{L}[\p{L}'’-]{1,29}$/u.test(record.firstName))return false;
+  if(record.lastInitial!=null&&(typeof record.lastInitial!=='string'||!/^\p{L}$/u.test(record.lastInitial)))return false;
+  const age=Date.now()-Date.parse(record.paidAt);
+  return Number.isFinite(age)&&age>=0&&age<=10*60*1000;
+}
+async function pollPurchases(){
+  const endpoint=purchaseToast.dataset.feed;
+  if(!endpoint||document.hidden||document.querySelector('dialog[open]')||feedBusy||Date.now()-lastPurchaseShown<30000)return;
+  let url;try{url=new URL(endpoint,location.href);}catch{return;}
+  if(url.protocol!=='https:')return;
+  feedBusy=true;
+  try{
+    const response=await fetch(url,{cache:'no-store',credentials:'omit',signal:AbortSignal.timeout(8000)});
+    if(!response.ok)return;
+    const records=await response.json();
+    if(!Array.isArray(records)||document.hidden||document.querySelector('dialog[open]'))return;
+    const record=records.filter(recentConfirmedPurchase).sort((a,b)=>Date.parse(b.paidAt)-Date.parse(a.paidAt))[0];
+    if(!record)return;
+    const name=record.firstName+(record.lastInitial?' '+record.lastInitial.toUpperCase()+'.':'');
+    const nameLabel=document.createElement('strong');nameLabel.textContent=name;
+    purchaseMessage.replaceChildren(nameLabel,document.createTextNode(' acabou de garantir o Plano '+(record.plan==='completo'?'Completo':'Essencial')+'.'));
+    seenPurchases.add(record.id);lastPurchaseShown=Date.now();
+    try{sessionStorage.setItem('cesta-confirmed-purchases',JSON.stringify([...seenPurchases].slice(-100)));}catch{}
+    purchaseToast.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(hidePurchase,8000);
+  }catch{/* A failed feed never blocks the page or creates a purchase notice. */}
+  finally{feedBusy=false;}
+}
+if(purchaseToast.dataset.feed){pollPurchases();setInterval(pollPurchases,30000);}
