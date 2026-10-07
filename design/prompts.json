@@ -1,0 +1,72 @@
+[
+  {
+    "name": "hero-natal",
+    "prompt": "Use case: product-mockup. Asset type: hero image for the Brazilian Cesta Certa Christmas sales campaign.\nCreate a luxurious photorealistic editorial product photograph, LANDSCAPE 3:2, crisp exquisite detail, warm natural light. On a warm ivory stone tabletop place an abundant handcrafted Christmas gift basket in natural wicker, champagne-colored cellophane subtly folded behind the contents, a thick dark burgundy velvet bow, a small panettone in plain forest-green packaging, artisan biscuit jar, premium chocolate wrapped in gold foil, a white ceramic mug, cinnamon and a small pine sprig. A modern black smartphone standing at the right shows an elegant clean Christmas basket app interface in deep evergreen, warm ivory and antique gold. On screen exact short Portuguese texts: \"Cesta Certa\", \"Edição de Natal\", \"Criar minha cesta\". Beneath the title show a miniature photo of the same basket with a few neat item rows and a forest green button. Screen is a preview design, not a fantasy hologram. Small gold star emblem on the basket gift tag with exact text \"Feliz Natal\". Background dark evergreen wall with softly blurred warm fairy lights and a tasteful small Christmas tree, no excessive ornaments. Colors #183D30 evergreen, #7C2837 wine, #CBA55E muted gold, #F7F2E8 ivory. Entire basket, ribbon, and phone fully visible with generous framing margin. Premium, tasteful, commercially attractive, believable Brazilian home-based gift business. No people, no income claims, no large advertising titles, no brand-name products, no watermark, no collages or panels.",
+    "method": "Gerador de imagens integrado",
+    "original": "originais/hero-natal.png",
+    "web": "../dist/assets/hero-natal.webp"
+  },
+  {
+    "name": "cesta-cafe-natal",
+    "prompt": "Use case: product-mockup. Create one exquisite photorealistic Christmas gift basket catalogue photograph for the Brazilian Cesta Certa brand. Square composition. A medium round natural wicker breakfast basket containing a small plain-wrapped panettone, white ceramic mug, a clear jam jar, shortbread biscuits in a clear bag, a small pouch of coffee. Thick burgundy velvet bow on front, tiny ivory gift tag reading exactly \"Bom Natal\", pine sprig, no other text or labels. Warm ivory stone table, subtle dark evergreen background, soft golden Christmas bokeh. Editorial product photography, warm natural window light, realistic materials, impeccable handcraft, no people, no phone, no logos, no collage, no watermark. All products, basket handle and ribbon fully within frame with spacious margin. Palette deep evergreen #183D30, wine #7C2837, antique gold #CBA55E, ivory #F7F2E8. Match a sophisticated Brazilian handmade Christmas gift catalogue.",
+    "method": "Gerador de imagens integrado",
+    "original": "originais/cesta-cafe-natal.png",
+    "web": "../dist/assets/cesta-cafe-natal.webp"
+  },
+  {
+    "name": "cesta-doces-natal",
+    "prompt": "Use case: product-mockup. One square luxury Christmas gift catalogue photograph, photorealistic. Cesta Certa Christmas style, warm ivory stone table, deep evergreen background, muted warm fairy-light bokeh, sophisticated studio lighting. An OPEN low rectangular rigid forest-green gift box, gold-foil star pattern, filled with gold-wrapped artisan truffles, a small panettone with top visible, star-shaped iced biscuits in a transparent sachet and a small ivory candle in glass. Tissue paper in burgundy. A beautiful wine velvet ribbon tied at the front corner. The lid rests upright behind with a simple gold star, no words. Balanced thoughtful arrangement, each item distinct and physically plausible. No brands, no phone, no people, no text, no watermark. Entire box and lid fully visible with generous margin. Deep green #183D30 wine #7C2837 antique gold #CBA55E ivory #F7F2E8. A different arrangement from a wicker breakfast basket, focus on Christmas sweets and chocolate.",
+    "method": "Gerador de imagens integrado",
+    "original": "originais/cesta-doces-natal.png",
+    "web": "../dist/assets/cesta-doces-natal.webp"
+  },
+  {
+    "name": "cesta-brinde-natal",
+    "prompt": "Use case: product-mockup. Square photorealistic luxury Christmas gift catalogue photograph. On an ivory stone tabletop, a low oval natural wicker hamper with two elegant empty champagne flutes nestled securely, a tall dark green bottle with a blank cream label and gold foil neck, premium chocolate wrapped in gold paper, small clear jar of nuts and small wrapped festive fruit cake. Forest-green satin ribbon with gold edges, a single burgundy velvet bow and small ivory gift tag bearing a gold star only. Dark green interior background and soft golden fairy lights; realistic high-end Brazilian Christmas gifting photography, warm studio light. Whole basket, flutes, bottle and bow completely visible, generous headroom. Tasteful evergreen #183D30, burgundy #7C2837, gold #CBA55E, ivory #F7F2E8. No people, no phone, no brands, no advertising lettering, no collage, no watermark. Distinct scene celebrating a festive toast.",
+    "method": "Gerador de imagens integrado",
+    "original": "originais/cesta-brinde-natal.png",
+    "web": "../dist/assets/cesta-brinde-natal.webp"
+  },
+  {
+    "name": "cesta-afeto-natal",
+    "prompt": "Use case: product-mockup. One square premium Christmas gift catalogue photograph. A small elegant cylindrical ivory rigid gift box open on an ivory stone tabletop, filled with a white ceramic mug, a neutral knitted soft scarf folded neatly, a glass candle with an unlit wick, two artisan chocolate bars in plain forest-green paper, and one pine sprig. Burgundy velvet wide ribbon tied into a lush bow around the box, tiny ivory tag with a gold star only. Lid leaning behind. Luxurious yet achievable handmade gift, realistic materials and coherent product arrangement. Dark green wall, soft warm golden Christmas fairy lights, tasteful photographic styling matching a Brazilian Cesta Certa Christmas catalogue. Palette #183D30 evergreen, #7C2837 wine, #CBA55E antique gold, #F7F2E8 ivory. Entire box fully visible with generous margins. No people, no phone, no logos or product names, no collage, no watermarks. A calm cozy personal gift scene distinct from food hampers.",
+    "method": "Gerador de imagens integrado",
+    "original": "originais/cesta-afeto-natal.png",
+    "web": "../dist/assets/cesta-afeto-natal.webp"
+  },
+  {
+    "name": "cesta-corporativa-natal",
+    "prompt": "Use case: product-mockup. One square photorealistic premium Christmas corporate gift catalogue photo. On an ivory stone table, an open small rectangular kraft gift box with a forest-green sleeve and a neat gold-edged burgundy ribbon, filled with a compact panettone in plain dark green paper, a miniature clear jar of caramel nuts with gold lid, a pouch of coffee, and two gold-wrapped chocolates. Restrained premium corporate gifting, achievable handmade packaging, simple ivory greeting card with a small gold star, NO written words. Dark evergreen background with subtle warm fairy lights and a pine branch. Realistic premium commercial photography, all contents distinguishable and securely resting within the box. Whole box and ribbon within square frame with ample negative margin. Palette evergreen #183D30, wine #7C2837, antique gold #CBA55E, warm ivory #F7F2E8. No people, no smartphone, no brands, no labels, no watermark, no collage.",
+    "method": "Gerador de imagens integrado",
+    "original": "originais/cesta-corporativa-natal.png",
+    "web": "../dist/assets/cesta-corporativa-natal.webp"
+  },
+  {
+    "name": "cesta-familia-natal",
+    "prompt": "Use case: product-mockup. Square premium photorealistic Christmas gift catalogue photograph. One large natural wicker family hamper on a warm ivory stone table, with a full-sized panettone in plain forest-green wrap, a tall clear jar of Christmas biscuits, two small ivory ceramic cups side by side, a jar of jam, a compact gold-foil chocolate gift box and a small bag of nuts. Abundant but neatly arranged and believable. Wide burgundy velvet bow at the front, small gold star on a cream tag, delicate pine branches. Deep evergreen interior wall, soft warm golden fairy-light bokeh, editorial luxury commercial photography, warm natural light. Entire hamper and all products fully in frame with wide margin. Cesta Certa Christmas palette #183D30 green #7C2837 wine #CBA55E gold #F7F2E8 ivory. No people, no phones, no labels or text, no watermark, no collage. Distinct generous family-sharing gift composition.",
+    "method": "Gerador de imagens integrado",
+    "original": "originais/cesta-familia-natal.png",
+    "web": "../dist/assets/cesta-familia-natal.webp"
+  },
+  {
+    "name": "bonus-foto",
+    "prompt": "Use case: product-mockup. Create a square premium digital-guide product photograph for Cesta Certa Christmas. One single hardcover-style guide standing upright, very slight three-quarter perspective, with a deep evergreen cloth-textured cover, elegant antique gold foil typography. Cover exact title in large legible refined serif: \"Kit Foto de Cesta\". Small exact brand at top \"CESTA CERTA\". Small subtitle \"Fotografe com seu celular\". In the lower half of the cover a beautiful framed photograph of a small Christmas wicker gift basket with burgundy velvet bow and panettone. Place one modern black smartphone leaning beside the book, screen showing a clean camera view of that same basket. On ivory stone tabletop, minimal pine sprig and a tiny gold Christmas ornament. Background softly blurred dark green studio, warm natural light, luxurious restrained editorial merchandising. Book title must be accurate and readable. Entire book and phone fully visible, large spacious margins, no crowded extra props, no repeated books, no people, no watermark. Palette #183D30 evergreen #7C2837 wine #CBA55E gold #F7F2E8 ivory.",
+    "method": "Gerador de imagens integrado",
+    "original": "originais/bonus-foto.png",
+    "web": "../dist/assets/bonus-foto.webp"
+  },
+  {
+    "name": "bonus-calendario",
+    "prompt": "Use case: product-mockup. Square premium digital-guide product photography for Cesta Certa Christmas, matching an elegant evergreen/wine/gold collection. One single substantial hardcover-style planner standing upright, slightly angled, deep burgundy cloth cover with thin antique gold border and discreet gold pine botanical corner details. Exact large cover text in refined readable serif: \"Calendário de Vendas\" then large \"2026\". Exact small brand at top \"CESTA CERTA\". Exact short subtitle \"Planeje cada oportunidade\". A minimal gold star ornament and tasteful gold line drawing of a calendar on the lower cover, NO calendar grid with invented dates. Beside the standing planner, one closed ivory notebook and slim gold pen on warm ivory stone table. Small pine sprig with wine ribbon, dark evergreen softly blurred studio background. Warm gentle side lighting, luxury realistic textures. Full cover and props in frame, wide margins. No people, no extra books, no phone, no watermark, no collage. Accurate Portuguese title. Palette #183D30 evergreen, #7C2837 wine, #CBA55E gold, #F7F2E8 ivory.",
+    "method": "Gerador de imagens integrado",
+    "original": "originais/bonus-calendario.png",
+    "web": "../dist/assets/bonus-calendario.webp"
+  },
+  {
+    "name": "bonus-textos",
+    "prompt": "Use case: product-mockup. Square premium digital-guide product photograph for a Cesta Certa Christmas collection. One single upright ivory linen-textured hardcover-style guide, slight three-quarter view, thin antique gold frame, tasteful fine pine branches in forest green and wine at the corners. Cover exact short large title in highly readable refined serif: \"30 Textos Prontos\". Small brand at top exact \"CESTA CERTA\". Subtitle exact \"Para divulgar suas cestas\". Minimal gold line icon of a message bubble near the bottom. Next to the guide a modern black smartphone showing an elegant clean generic messaging screen with deep green header, ivory background and a large Christmas basket thumbnail, and only two simple blank short chat bubbles; no fake customer sales or revenue. A small burgundy velvet ribbon and tiny gold ornament on warm ivory stone table, softly blurred dark evergreen studio background. Warm natural lighting, coherent luxurious realistic texture. Entire book and phone visible, ample margins. No people, no repeated books, no watermark, no collage. Palette deep evergreen #183D30, wine #7C2837, antique gold #CBA55E, ivory #F7F2E8. Correct Portuguese title and accents.",
+    "method": "Gerador de imagens integrado",
+    "original": "originais/bonus-textos.png",
+    "web": "../dist/assets/bonus-textos.webp"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "name": "cesta-certa-natal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Campanha natalina independente do Cesta Certa",
+  "scripts": { "check": "node scripts/check.mjs", "build": "npm run check", "dev": "node scripts/serve.mjs", "preview": "node scripts/serve.mjs" },
+  "engines": { "node": "22.x" }
+}
