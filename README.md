@@ -18,7 +18,7 @@ Importar **este repositório como um novo projeto**, usando a raiz. A configura�
 - O pop-up revela um desconto fixo de R$7,00 com animação de roleta. Não há sorteio ou resultado aleatório. Fechar volta à página; recusar segue para o checkout do básico.
 - Garantia de 7 dias, acesso vitalício e entrega digital pelo WhatsApp/e-mail após a confirmação.
 - Kit Foto de Cesta, Calendário de Vendas 2026 e 30 Textos Prontos inclusos no Completo.
-- Pixel UTMify preservado e links de pagamento atualizados conforme aprovação. Parâmetros de campanha são preservados nos checkouts.
+- Pixel UTMify (ID `69fe2f29778407a3ca9b106c`) e script de UTMs instalados uma vez no `<head>`, com os dois trechos fornecidos pelo proprietário. O pixel fica desativado em `localhost`, `127.0.0.1` e `[::1]`: o SDK do fornecedor direciona `localhost` e `127.0.0.1` a um servidor de desenvolvimento na porta 3001. Em domínios publicados, usa a API de produção. O script de UTMs também carrega na prévia local. Links de pagamento atualizados conforme aprovação. Parâmetros de campanha são preservados nos checkouts.
 
 O simulador usa estimativas editáveis e distingue faturamento bruto de saldo após custos. A página não cria resultados de clientes nem novas promessas de entrega. Os depoimentos e suas fotos foram preservados da referência fornecida pelo proprietário.
 

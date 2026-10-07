@@ -1,13 +1,26 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { Script } from 'node:vm';
+import { Script, createContext, runInContext } from 'node:vm';
 const root=fileURLToPath(new URL('../dist/',import.meta.url));
 const html=readFileSync(resolve(root,'index.html'),'utf8');
 const js=readFileSync(resolve(root,'app.js'),'utf8');
 const css=readFileSync(resolve(root,'style.css'),'utf8');
 new Script(js,{filename:'app.js'});
 for(const [,script] of html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)) if(script.trim()) new Script(script);
+const trackingScripts=[];
+const trackingContext=createContext({window:{},location:{hostname:'cesta-certa.example'},atob:value=>Buffer.from(value,'base64').toString('binary'),document:{createElement:()=>({attributes:{},setAttribute(name,value){this.attributes[name]=value;}}),head:{appendChild:script=>trackingScripts.push(script)}}});
+const head=html.split('</head>')[0];
+for(const [,script] of head.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)) if(script.trim()) runInContext(script,trackingContext,{timeout:1000});
+const pixelScripts=trackingScripts.filter(script=>script.src==='https://cdn.utmify.com.br/scripts/pixel/pixel.js');
+const utmScripts=trackingScripts.filter(script=>script.src==='https://cdn.utmify.com.br/scripts/utms/latest.js');
+if(trackingScripts.length!==2||pixelScripts.length!==1||utmScripts.length!==1||trackingContext.window.pixelId!=='69fe2f29778407a3ca9b106c') throw new Error('Pixel incorreto, ausente ou duplicado.');
+if(trackingScripts.some(script=>!script.async||!script.defer)||!Object.hasOwn(utmScripts[0].attributes,'data-utmify-prevent-xcod-sck')||!Object.hasOwn(utmScripts[0].attributes,'data-utmify-prevent-subids')) throw new Error('Configuração UTMify incompleta.');
+
+trackingScripts.length=0;
+trackingContext.location.hostname='127.0.0.1';
+for(const [,script] of head.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)) if(script.trim()) runInContext(script,trackingContext,{timeout:1000});
+if(trackingScripts.length!==1||trackingScripts[0].src!=='https://cdn.utmify.com.br/scripts/utms/latest.js') throw new Error('O pixel deve evitar o endpoint de desenvolvimento no localhost.');
 const files=new Set(['index.html','style.css','app.js']);
 for(const [,path] of html.matchAll(/(?:src|href)="([^"#]+)"/g)) if(!/^(?:https?:|data:|mailto:)/.test(path)) files.add(path.split(/[?#]/)[0]);
 for(const [,path] of css.matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g)) if(!/^(?:https?:|data:)/.test(path)) files.add(path);
@@ -21,4 +34,4 @@ const checkoutLinks=[...html.matchAll(/href="(https:\/\/pay\.wiapy\.com\/[^"?]+)
 const approvedCheckouts=['https://pay.wiapy.com/jo956lg2C0So','https://pay.wiapy.com/6ac68690c7ae865f6ee08ea8','https://pay.wiapy.com/_wAFKQWmeV8'];
 if(checkoutLinks.length!==4||new Set(checkoutLinks).size!==3||checkoutLinks.some(url=>!approvedCheckouts.includes(url))) throw new Error('Checkouts diferentes da oferta aprovada.');
 if(/Hotmart|somente hoje|termina hoje|R\$ 1\.000 por semana/i.test(html+js)) throw new Error('Referência antiga ou urgência não comprovada encontrada.');
-console.log(`Cesta Certa Natal aprovado: JavaScript válido, âncoras e 3 destinos de checkout corretos, ${files.size} arquivos estáticos encontrados.`);
+console.log(`Cesta Certa Natal aprovado: JavaScript e pixel válidos, 2 scripts UTMify sem duplicação, âncoras e 3 destinos de checkout corretos, ${files.size} arquivos estáticos encontrados.`);
